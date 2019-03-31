@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { createStreams } from '../../actions';
 
 class StreamCreate extends Component {
 
@@ -31,8 +33,9 @@ class StreamCreate extends Component {
     }
   }
 
-  onSubmit(formValues){
+  onSubmit = (formValues) => {
     console.log(formValues);
+    this.props.createStreams(formValues);
   }
 
   render() {
@@ -64,8 +67,12 @@ const validate = (formValues) => {
 }
 
 //reduxForm receives only one object
-export default reduxForm({
+const formWrapped = reduxForm({
   form: 'stream-create',
   validate: validate
 
 })(StreamCreate);
+
+export default connect(null, {
+  createStreams,
+})(formWrapped);
