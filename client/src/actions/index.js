@@ -23,18 +23,17 @@ export const signOut = () => {
   };
 };
 
-export const createStreams = (formValues) => {
+export const createStreams = (formValues) => async (dispath, getState) => {
 //to use thunk we need return function with dispath
-  return async (dispath) => {
-    const response = await streams.post('/streams', formValues);
+    const { userId } = getState().auth;
+    const response = await streams.post('/streams', { ...formValues, userId });
 
     dispath({ type: CREATE_STREAM, payload: response.data })
-  }
 };
 
 export const fetchStreams = () => async dispath => {
   const response = await streams.get('/streams');
-  
+
   dispath({ type: FETCH_STREAMS, payload: response.data})
 };
 
