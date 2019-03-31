@@ -33,8 +33,8 @@ export const createStreams = (formValues) => {
 };
 
 export const fetchStreams = () => async dispath => {
-  const response = await streams.post('/streams');
-
+  const response = await streams.get('/streams');
+  
   dispath({ type: FETCH_STREAMS, payload: response.data})
 };
 
