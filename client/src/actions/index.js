@@ -47,9 +47,11 @@ export const fetchStream = (id) => async dispath => {
 };
 
 export const editStream = (id, formValues) => async dispath => {
-  const response = await streams.put(`/streams/${id}`, formValues);
+  //path updatina tik reikalingas objecto dalis, o put updatina visa objecta
+  const response = await streams.patch(`/streams/${id}`, formValues);
 
   dispath({ type: EDIT_STREAM, payload: response.data});
+  history.push('/');
 };
 
 export const deleteStream = (id) => async dispath => {
