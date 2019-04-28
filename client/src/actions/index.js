@@ -58,4 +58,5 @@ export const deleteStream = (id) => async dispath => {
   await streams.delete(`/streams/${id}`);
 
   dispath({ type: DELETE_STREAM, payload: id});
+  history.push('/');
 };
