@@ -15,7 +15,6 @@ const App = () => {
     <div className="ui container">
       <Router history={history}>
         <Header />
-        // paima tik viena route
         <Switch>
           <Route path="/" exact component={StreamList} />
           <Route path="/streams/new" exact component={StreamCreate} />
