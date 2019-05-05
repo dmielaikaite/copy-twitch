@@ -1,0 +1,36 @@
+{
+  "streams": [
+    {
+      "title": "check",
+      "description": "check",
+      "id": 5
+    },
+    {
+      "title": "sdf",
+      "description": "df",
+      "id": 10
+    },
+    {
+      "title": "hahah",
+      "description": "111",
+      "id": 11
+    },
+    {
+      "title": "hey",
+      "description": "donata",
+      "userId": "117653520084329342341",
+      "id": 13
+    },
+    {
+      "title": "zdzd",
+      "description": "refactored",
+      "id": 14
+    },
+    {
+      "title": "title of stream",
+      "description": "content of description",
+      "userId": "117653520084329342341",
+      "id": 15
+    }
+  ]
+}
